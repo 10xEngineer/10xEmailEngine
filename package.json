@@ -1,0 +1,7 @@
+{
+  "name": "10xEmailEnginer",
+  "version": "0.0.1",
+  "dependencies": {
+    "nodemailer": "0.3.x"
+  }
+}
