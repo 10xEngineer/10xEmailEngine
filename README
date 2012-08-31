@@ -1,0 +1,26 @@
+Description
+===========
+Thin wrapper around nodemailer with smtp transport, adding templates and configuration.
+
+Usage:
+======
+
+setTransport(options)
+	options - See: https://github.com/andris9/Nodemailer#setting-up-a-transport-method smtp options
+	Example: setTransport({
+		service : 'Gmail'
+	  	auth :
+	    	user : '10xengineer@gmail.com'
+	    	pass : 'password'
+	});
+
+setTemplates(path)
+	path - path to a templates folder with jade templates (myTemplate.jade) and optional configuration files (myTemplate.conf).
+
+sendMail(options,callback)
+	options = {
+		template,
+		data
+	}
+		template - the template name (e.g. 'myTemplate')
+		data - data to be passed to the template and nodemailer mail options. Data is first passed to the template (myTemplate.jade), and the result gets added to the data as data.html. Then data is passed to the optional configuration file (myTemplate.conf), where it can be modified as wished. The modified data is finally passed to the nodemailer mail options.
